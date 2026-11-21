@@ -9,7 +9,7 @@ Motion graphics designer: Remotion, FFmpeg, cinematic AI video.
 - When editing code, show only the changed code or a diff.
 
 ## Defaults for video work
-- Motion graphics, titles, kinetic type and data animation: build them in Remotion.
+- Motion graphics: two renderers are available, Remotion (React; data, charts, captions, image scenes) and HyperFrames (HTML/CSS/GSAP; kinetic type, product promos, launch reels, SVG characters). Before building, recommend one for the job with a one-line reason and let me choose.
 - Encoding, trimming, audio mixing, color and subtitles burn-in: use FFmpeg.
 - AI clips: I generate them myself in Veo (Gemini/Flow, Google AI Pro); write ready-to-paste Veo prompts.
 - Voiceover: I generate it in Google AI Studio (Gemini TTS); write the script with performance directions and ask for WAV.

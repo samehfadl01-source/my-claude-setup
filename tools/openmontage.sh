@@ -8,4 +8,5 @@ cd OpenMontage
 git pull --ff-only || true
 make setup
 .venv/bin/python -m pip install -q faster-whisper scenedetect yt-dlp youtube-transcript-api || true
+npx --yes hyperframes skills update || true
 git checkout -- remotion-composer/package-lock.json 2>/dev/null || true
