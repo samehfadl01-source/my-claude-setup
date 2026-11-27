@@ -1,28 +1,31 @@
-# Personal setup
+# Motion Graphics & Video Setup
 
-## About me
-Motion graphics designer: Remotion, FFmpeg, cinematic AI video.
+## Profile
+Motion graphics designer working with code-driven video pipelines: Remotion, HyperFrames, FFmpeg, and hybrid AI video/voice workflows.
 
-## How to reply
-- Reply in Egyptian Arabic when I write in Arabic; keep code, commands and file names in English.
-- Be concise: no filler, no recap of what I said.
-- When editing code, show only the changed code or a diff.
+## Communication
+- Match the user's language (reply in Egyptian Arabic when prompted in Arabic; keep code, CLI commands, and file names in English).
+- Be concise: avoid filler or repeating the prompt back.
+- When editing code, show only the changed snippet or a concise diff.
 
-## Defaults for video work
-- Motion graphics: two renderers are available, Remotion (React; data, charts, captions, image scenes) and HyperFrames (HTML/CSS/GSAP; kinetic type, product promos, launch reels, SVG characters). Before building, recommend one for the job with a one-line reason and let me choose.
-- Encoding, trimming, audio mixing, color and subtitles burn-in: use FFmpeg.
-- AI clips: I generate them myself in Veo (Gemini/Flow, Google AI Pro); write ready-to-paste Veo prompts.
-- Voiceover: I generate it in Google AI Studio (Gemini TTS); write the script with performance directions and ask for WAV.
+## Defaults for Video Work
+- **Motion graphics renderers:** Two renderers are available:
+  - **Remotion** (React): best for data-driven scenes, charts, timed captions, and image/composited sequences.
+  - **HyperFrames** (HTML/CSS/GSAP): best for kinetic typography, product promos, launch reels, and animated SVG illustrations.
+  - Before building a new project, recommend the better fit in one line and confirm with the user unless the project's local config locks one.
+- **Post-processing & utilities:** Use **FFmpeg** for encoding, trimming, audio mixing, color adjustments, and subtitle burn-in.
+- **Hybrid AI clips & voiceover:**
+  - Generate ready-to-paste shot prompts for AI video clips (e.g., Veo) rather than assuming an API key is configured.
+  - Write voiceover scripts per scene with pacing/delivery directions and request lossless `.wav` audio.
+- **Arabic / RTL motion graphics:** Keep Arabic shaping intact (`dir="rtl"`), animate by words/lines rather than splitting connected glyphs per character, and load explicit web/local Arabic fonts before rendering.
 
-## Brand style
-- «المنصة الموحدة لخدمات الكهرباء»: the approved design system is «Electricity Services» (https://claude.ai/artifact/DHMBEYfLqvFpKpHD7wTxCC). Take colors, fonts, logo and icons from it; don't ask me for them.
-- Any other brand: ask me for colors, fonts and logo before its first branded video, then save them here.
+## Project & Brand Overrides
+- Always check the active project's own `CLAUDE.md`, `PLAYBOOK.md`, or design system tokens before applying generic defaults.
+- If a project specifies a locked renderer, brand palette, typography, or template, follow the project's local configuration instead of overriding it.
+- For any new branded video without saved guidelines, ask for brand colors, fonts, and logo first, and keep client-specific rules inside that project's own `CLAUDE.md` (or a gitignored `CLAUDE.local.md`).
 
-## Project exception: «المنصة الموحدة لخدمات الكهرباء» service videos
-For these service explainers, the approved template («التقديم على عداد كودي» 01/02), the «Electricity Services» design system and that project's CLAUDE.md, PLAYBOOK.md and memory rule. Do not route them through the OpenMontage pipeline, its stage gates or its stock styles/components, and don't re-ask the renderer choice (HyperFrames is locked). Small OpenMontage utilities are fine where they help.
-
-## Installed tools
-Tools are installed in __WORKSPACE__ by my-claude-setup/install.sh.
-- OpenMontage (agentic video production): __WORKSPACE__/OpenMontage.
-  For any video request (except the «المنصة الموحدة لخدمات الكهرباء» project above): cd there and read AGENT_GUIDE.md before acting.
-  Send finished renders to the user with SendUserFile.
+## Installed Tools
+Tools are installed in `__WORKSPACE__` by `my-claude-setup/install.sh`.
+- **OpenMontage** (agentic video production): `__WORKSPACE__/OpenMontage`
+  - For OpenMontage pipeline tasks, `cd` there and read `AGENT_GUIDE.md` before acting (unless the active project explicitly exempts itself in its local `CLAUDE.md`).
+- Deliver finished renders cleanly as user-accessible output files.
