@@ -15,10 +15,14 @@ Motion graphics designer: Remotion, FFmpeg, cinematic AI video.
 - Voiceover: I generate it in Google AI Studio (Gemini TTS); write the script with performance directions and ask for WAV.
 
 ## Brand style
-Not defined yet. Ask me for colors, fonts and logo before the first branded video, then save them here.
+- «المنصة الموحدة لخدمات الكهرباء»: the approved design system is «Electricity Services» (https://claude.ai/artifact/DHMBEYfLqvFpKpHD7wTxCC). Take colors, fonts, logo and icons from it; don't ask me for them.
+- Any other brand: ask me for colors, fonts and logo before its first branded video, then save them here.
+
+## Project exception: «المنصة الموحدة لخدمات الكهرباء» service videos
+For these service explainers, the approved template («التقديم على عداد كودي» 01/02), the «Electricity Services» design system and that project's CLAUDE.md, PLAYBOOK.md and memory rule. Do not route them through the OpenMontage pipeline, its stage gates or its stock styles/components, and don't re-ask the renderer choice (HyperFrames is locked). Small OpenMontage utilities are fine where they help.
 
 ## Installed tools
 Tools are installed in __WORKSPACE__ by my-claude-setup/install.sh.
 - OpenMontage (agentic video production): __WORKSPACE__/OpenMontage.
-  For any video request: cd there and read AGENT_GUIDE.md before acting.
+  For any video request (except the «المنصة الموحدة لخدمات الكهرباء» project above): cd there and read AGENT_GUIDE.md before acting.
   Send finished renders to the user with SendUserFile.
