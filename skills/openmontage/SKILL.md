@@ -3,6 +3,7 @@ name: openmontage
 description: Start a video production with OpenMontage (agentic video pipelines, Remotion/HyperFrames/FFmpeg). Use for any video request.
 ---
 # OpenMontage
+0. Skip this skill for EEHC «المنصة الموحدة لخدمات الكهرباء» service videos: follow that project's approved template, CLAUDE.md and PLAYBOOK.md instead.
 1. cd __OPENMONTAGE_DIR__ and read AGENT_GUIDE.md fully before acting; follow its routing rules.
 2. If no brief was given, ask for: topic, duration, aspect ratio, tone, voiceover dialect, reference video.
 3. Hybrid workflow (no Google API key):
