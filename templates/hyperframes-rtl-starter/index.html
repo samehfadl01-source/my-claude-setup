@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arabic RTL Motion Studio Starter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Toggle .format-landscape for 16:9; add .debug-safe-zones to verify platform overlays -->
+  <main class="stage format-vertical" id="stage">
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="safe-zone-guide" aria-hidden="true"></div>
+
+    <section class="safe-content" aria-label="Hero Beat">
+      <span class="badge anim-enter" data-delay="0">
+        إنتاج ذكي · <span class="ltr-isolate">60 FPS</span>
+      </span>
+
+      <h1 class="headline" id="headline">
+        حركتك تبدأ من <span class="accent">الإطار الأول</span>
+      </h1>
+
+      <p class="subcopy anim-enter" data-delay="280">
+        موشن جرافيك عربي متقن بمساحات أمان مضبوطة وإيقاع صوتي متزامن مع
+        <span class="ltr-isolate">HyperFrames</span>.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // Animate Arabic headline word-by-word without splitting connected glyphs inside words.
+    function prepareWordReveal(el) {
+      const nodes = Array.from(el.childNodes);
+      el.innerHTML = "";
+      let wordIndex = 0;
+
+      nodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const tokens = node.textContent.trim().split(/\s+/).filter(Boolean);
+          tokens.forEach((word) => {
+            const span = document.createElement("span");
+            span.className = "word";
+            span.style.setProperty("--delay", `${wordIndex * 65}ms`);
+            span.textContent = word;
+            el.appendChild(span);
+            el.appendChild(document.createTextNode(" "));
+            wordIndex += 1;
+          });
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          const clone = node.cloneNode(true);
+          clone.classList.add("word");
+          clone.style.setProperty("--delay", `${wordIndex * 65}ms`);
+          el.appendChild(clone);
+          el.appendChild(document.createTextNode(" "));
+          wordIndex += 1;
+        }
+      });
+    }
+
+    async function bootScene() {
+      if (document.fonts && document.fonts.ready) {
+        await document.fonts.ready;
+      }
+      prepareWordReveal(document.getElementById("headline"));
+      requestAnimationFrame(() => {
+        document.getElementById("stage").classList.add("is-playing");
+      });
+    }
+
+    bootScene();
+  </script>
+</body>
+</html>
